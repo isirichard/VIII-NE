@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CajeroBuscarActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#B0BEC5">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUSCAR CAJERO"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese Codigo del cajero:"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Codigo Cajero"
+        android:id="@+id/ET_Cajero_Buscar_Codigo"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:id="@+id/TV_Cajero_Buscar_Nombre"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Estado Registro"
+        android:id="@+id/TV_Cajero_Buscar_ER"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ATRAS"
+            android:id="@+id/B_Cajero_Buscar_Atras"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUSCAR"
+            android:id="@+id/B_Cajero_Buscar_Buscar"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LISTAR"
+            android:id="@+id/B_Cajero_Buscar_Listar"/>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

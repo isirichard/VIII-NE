@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClienteMenuActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#B0BEC5">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MENU CLIENTE"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADICIONAR"
+        android:id="@+id/B_ClienteMenu_Adiccionar"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MODIFICAR"
+        android:id="@+id/B_ClienteMenu_Modificar"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ELIMINAR"
+        android:id="@+id/B_ClienteMenu_Eliminar"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUSCAR"
+        android:id="@+id/B_ClienteMenu_Buscar"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ATRAS"
+            android:id="@+id/B_ClienteMenu_Atras"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

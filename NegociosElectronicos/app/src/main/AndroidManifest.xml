@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jonathan.negocioselectronicos">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CajeroMenuActivity" />
+        <activity android:name=".CajeroAdicionarActivity" />
+        <activity android:name=".CajeroBuscarActivity" />
+        <activity android:name=".CajeroModificarActivity" />
+        <activity android:name=".CajeroEliminarActivity" />
+        <activity android:name=".ClienteAdicionarActivity" />
+        <activity android:name=".ClienteBuscarActivity" />
+        <activity android:name=".ClienteMenuActivity" />
+        <activity android:name=".ClienteModificarActivity" />
+        <activity android:name=".ClienteEliminarActivity" />
+        <activity android:name=".CajeroListarActivity" />
+        <activity android:name=".ClienteListarActivity" />
+        <activity android:name=".ReciboMenuActivity" />
+        <activity android:name=".ReciboAdicionarActivity" />
+        <activity android:name=".ReciboBuscarActivity" />
+        <activity android:name=".ReciboListarActivity" />
+        <activity android:name=".ReciboDetalleActivity" />
+        <activity android:name=".ReciboModificarActivity" />
+        <activity android:name=".ReciboEliminarActivity"></activity>
+    </application>
+
+</manifest>

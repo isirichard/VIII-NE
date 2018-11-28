@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CajeroEliminarActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#FF9E80">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ELIMINAR CAJERO"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese Codigo del cajero:"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Codigo Cajero"
+            android:id="@+id/ET_Cajero_Eliminar_Codigo"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            android:id="@+id/B_Cajero_Eliminar_Buscar"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:id="@+id/TV_Cajero_Eliminar_Nombre"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Estado Registro"
+        android:id="@+id/TV_Cajero_Eliminar_ER"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ATRAS"
+            android:id="@+id/B_Cajero_Eliminar_Atras"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ELIMINAR"
+            android:id="@+id/B_Cajero_Eliminar_Eliminar"/>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
