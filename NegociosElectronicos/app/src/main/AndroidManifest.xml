@@ -34,7 +34,8 @@
         <activity android:name=".ReciboListarActivity" />
         <activity android:name=".ReciboDetalleActivity" />
         <activity android:name=".ReciboModificarActivity" />
-        <activity android:name=".ReciboEliminarActivity"></activity>
+        <activity android:name=".ReciboEliminarActivity" />
+        <activity android:name=".ReciboListViewActivity"></activity>
     </application>
 
 </manifest>
