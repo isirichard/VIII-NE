@@ -22,30 +22,24 @@ public class MainActivity extends AppCompatActivity {
         B_Cajero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent1=new Intent(MainActivity.this,CajeroMenuActivity.class);
+                Intent intent1=new Intent(MainActivity.this,CajeroListViewActivity.class);
                 startActivity(intent1);
             }
         });
         B_Cliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2=new Intent(MainActivity.this,ClienteMenuActivity.class);
+                Intent intent2=new Intent(MainActivity.this,ClienteListViewActivity.class);
                 startActivity(intent2);
             }
         });
         B_Recibo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3=new Intent(MainActivity.this,ReciboMenuActivity.class);
+                Intent intent3=new Intent(MainActivity.this,ReciboListViewActivity.class);
                 startActivity(intent3);
             }
         });
-
-
-
-
-
 
 
     }

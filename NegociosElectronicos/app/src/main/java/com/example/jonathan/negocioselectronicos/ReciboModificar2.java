@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.TestLooperManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,24 +12,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jonathan.negocioselectronicos.entidades.Cajero;
 import com.example.jonathan.negocioselectronicos.entidades.Cliente;
+import com.example.jonathan.negocioselectronicos.entidades.Recibo;
 import com.example.jonathan.negocioselectronicos.utilidades.Utilidades;
 import com.example.jonathan.negocioselectronicos.utilidades.UtilidadesCliente;
 import com.example.jonathan.negocioselectronicos.utilidades.UtilidadesRecibo;
 
 import java.util.ArrayList;
 
-public class ReciboModificarActivity extends AppCompatActivity {
-
-    EditText campoCodigo,campoMonto;
-    Spinner campoCodigoCajero,campoCodigoCliente,campoOpcionesER;
-    TextView TV_CodigoCajero, TV_CodigoCliente, TV_ER;
-    Button B_Cancelar,B_Modificar,B_Buscar;
+public class ReciboModificar2 extends AppCompatActivity {
+    EditText campoMonto;
+    Spinner campoCodigoCajero,campoCodigoCliente;
+    TextView TV_Codigo_Recibo, TV_ER;
+    Button B_Modificar,B_Cancelar;
 
     ArrayList<String> listaCajeros;
     ArrayList<Cajero> cajerosList;
@@ -43,28 +41,22 @@ public class ReciboModificarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recibo_modificar);
+        setContentView(R.layout.activity_recibo_modificar2);
+
         conn=new ConexionSQLiteHelper(getApplicationContext(),"db_cajero",null,1);
         conn1=new ConexionSQLiteHelper(getApplicationContext(),"db_cliente",null,1);
         conn2=new ConexionSQLiteHelper(getApplicationContext(),"db_recibo",null,1);
 
-        campoCodigo=(EditText)findViewById(R.id.ET_Recibo_Modificar_Codigo);
-        campoMonto=(EditText)findViewById(R.id.ET_Recibo_Modificar_Monto);
+        TV_Codigo_Recibo=(TextView)findViewById(R.id.TV_Recibo_Modificar_Codigo2);
+        TV_ER=(TextView)findViewById(R.id.TV_Recibo_Modificar2_ER);
 
-        campoCodigoCajero=(Spinner)findViewById(R.id.S_ReciboCajero_Modificar);
-        campoCodigoCliente=(Spinner)findViewById(R.id.S_ReciboCliente_Modificar);
-        campoOpcionesER=(Spinner)findViewById(R.id.S_Recibo_Modificar_ER);
+        campoMonto=(EditText)findViewById(R.id.ET_Recibo_Modificar2_Monto);
 
-        TV_CodigoCajero=(TextView)findViewById(R.id.TV_ReciboCajero_Modificar);
-        TV_CodigoCliente=(TextView)findViewById(R.id.TV_ReciboCliente_Modificar);
-        TV_ER=(TextView)findViewById(R.id.TV_Recibo_Modificar_ER);
+        campoCodigoCajero=(Spinner)findViewById(R.id.S_ReciboCajero_Modificar2);
+        campoCodigoCliente=(Spinner)findViewById(R.id.S_ReciboCliente_Modificar2);
 
-        B_Buscar=(Button)findViewById(R.id.B_Recibo_Modificar_Buscar);
-        B_Modificar=(Button)findViewById(R.id.B_Recibo_Modificar_Modificar);
-        B_Cancelar=(Button)findViewById(R.id.B_Recibo_Modificar_Atras);
-
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.combo_opciones,android.R.layout.simple_spinner_item);
-        campoOpcionesER.setAdapter(adapter);
+        B_Cancelar=(Button)findViewById(R.id.B_Recibo_Modificar2_Cancelar);
+        B_Modificar=(Button)findViewById(R.id.B_Recibo_Modificar2_Modificar);
 
         consultarListaCajeros();
         consultarListaClientes();
@@ -75,57 +67,60 @@ public class ReciboModificarActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence>adptador2=new ArrayAdapter(this,android.R.layout.simple_spinner_item,listaClientes);
         campoCodigoCliente.setAdapter(adptador2);
 
+        Bundle objetoEnviado=getIntent().getExtras();
+        Recibo recibo=null;
 
+        if(objetoEnviado!=null){
+            recibo= (Recibo) objetoEnviado.getSerializable("recibo2");
+            TV_Codigo_Recibo.setText(recibo.getCodigoRecibo().toString());
 
-        B_Buscar.setOnClickListener(new View.OnClickListener() {
+            SQLiteDatabase db=conn2.getReadableDatabase();
+            String[] parametros={recibo.getCodigoRecibo().toString()};
+
+            String[]campos={UtilidadesRecibo.CAMPO_MONTO,UtilidadesRecibo.CAMPO_ESTADO_REGISTRO3};
+
+            try{
+                Cursor cursor=db.query(UtilidadesRecibo.TABLA_RECIBO,campos,UtilidadesRecibo.CAMPO_CODIGO_RECIBO+"=?",parametros,null,null,null);
+                cursor.moveToFirst();
+                campoMonto.setText(cursor.getString(0));
+                TV_ER.setText(cursor.getString(1));
+                cursor.close();
+            }catch (Exception e) {
+                Toast.makeText(getApplicationContext(),"El codigo no existe",Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        B_Cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(ReciboModificar2.this,ReciboListViewActivity.class);
+                startActivity(intent);
 
-                SQLiteDatabase db=conn2.getReadableDatabase();
-                String[] parametros6={campoCodigo.getText().toString()};
-                String[]campos={UtilidadesRecibo.CAMPO_CODIGO_CAJERO, UtilidadesRecibo.CAMPO_CODIGO_CLIENTE,UtilidadesRecibo.CAMPO_MONTO,UtilidadesRecibo.CAMPO_ESTADO_REGISTRO3};
-
-                try{
-                    Cursor cursor=db.query(UtilidadesRecibo.TABLA_RECIBO,campos,UtilidadesRecibo.CAMPO_CODIGO_RECIBO+"=?",parametros6,null,null,null);
-                    cursor.moveToFirst();
-                    TV_CodigoCajero.setText(cursor.getString(0));
-                    TV_CodigoCliente.setText(cursor.getString(1));
-                    campoMonto.setText(cursor.getString(2));
-                    TV_ER.setText(cursor.getString(3));
-                    cursor.close();
-
-                }catch (Exception e) {
-                    Toast.makeText(getApplicationContext(),"El codigo no existe",Toast.LENGTH_SHORT).show();
-                    campoCodigo.setText("");
-                }
             }
         });
 
         B_Modificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 SQLiteDatabase db=conn2.getWritableDatabase();
-                String[] parametros8={campoCodigo.getText().toString()};
+                String[] parametros_8={TV_Codigo_Recibo.getText().toString()};
                 ContentValues values=new ContentValues();
                 values.put(UtilidadesRecibo.CAMPO_CODIGO_CAJERO,campoCodigoCajero.getSelectedItem().toString());
                 values.put(UtilidadesRecibo.CAMPO_CODIGO_CLIENTE,campoCodigoCliente.getSelectedItem().toString());
                 values.put(UtilidadesRecibo.CAMPO_MONTO,campoMonto.getText().toString());
-                values.put(UtilidadesRecibo.CAMPO_ESTADO_REGISTRO3,campoOpcionesER.getSelectedItem().toString());
+                values.put(UtilidadesRecibo.CAMPO_ESTADO_REGISTRO3,TV_ER.getText().toString());
 
-                db.update(UtilidadesRecibo.TABLA_RECIBO,values,UtilidadesRecibo.CAMPO_CODIGO_RECIBO+"=?",parametros8);
+                db.update(UtilidadesRecibo.TABLA_RECIBO,values,UtilidadesRecibo.CAMPO_CODIGO_RECIBO+"=?",parametros_8);
                 Toast.makeText(getApplicationContext(),"SE MODIFICO",Toast.LENGTH_LONG).show();
                 db.close();
-            }
-        });
-        B_Cancelar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(ReciboModificarActivity.this,ReciboMenuActivity.class);
+                Intent intent=new Intent(ReciboModificar2.this,ReciboListViewActivity.class);
                 startActivity(intent);
             }
         });
+
     }
+
+
     private void consultarListaCajeros() {
         SQLiteDatabase db=conn.getReadableDatabase();
         Cajero cajero=null;
@@ -150,10 +145,11 @@ public class ReciboModificarActivity extends AppCompatActivity {
 
     private void obtenerListaCajeros() {
         listaCajeros=new ArrayList<String>();
-        listaCajeros.add("Seleccione Cajero");
+        //listaCajeros.add("Seleccione Cajero");
 
         for (int i=0; i<cajerosList.size();i++){
-            listaCajeros.add(cajerosList.get(i).getCodigo()+"-"+cajerosList.get(i).getNombre()+"-"+cajerosList.get(i).getEstadoRegistro());
+            listaCajeros.add(cajerosList.get(i).getCodigo()+"-"+cajerosList.get(i).getNombre());
+
 
         }
     }
@@ -180,12 +176,11 @@ public class ReciboModificarActivity extends AppCompatActivity {
     }
     private void obtenerListaClientes() {
         listaClientes=new ArrayList<String>();
-        listaClientes.add("Seleccione cliente");
+        //listaClientes.add("Seleccione cliente");
 
         for (int i=0; i<clientesList.size();i++) {
-            listaClientes.add(clientesList.get(i).getCodigo() + "-" + clientesList.get(i).getNombre() + "-" + clientesList.get(i).getEstadoRegistro());
+            listaClientes.add(clientesList.get(i).getCodigo() + "-" +clientesList.get(i).getNombre());
+
         }
-
     }
-
 }

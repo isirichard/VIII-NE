@@ -75,17 +75,19 @@ public class ReciboAdicionarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 registrarRecibo();
+                Intent intent=new Intent(ReciboAdicionarActivity.this,ReciboListViewActivity.class);
+                startActivity(intent);
+
             }
         });
         B_Cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ReciboAdicionarActivity.this,ReciboMenuActivity.class);
+                Intent intent=new Intent(ReciboAdicionarActivity.this,ReciboListViewActivity.class);
                 startActivity(intent);
 
             }
         });
-
 
     }
 
@@ -156,7 +158,7 @@ public class ReciboAdicionarActivity extends AppCompatActivity {
      private void registrarRecibo(){
         SQLiteDatabase db=conn2.getWritableDatabase();
         ContentValues values=new ContentValues();
-         ContentValues values2=new ContentValues();
+        ContentValues values2=new ContentValues();
 
         values.put(UtilidadesRecibo.CAMPO_CODIGO_RECIBO,campoCodigo.getText().toString());
         values.put(UtilidadesRecibo.CAMPO_MONTO,campoMonto.getText().toString());

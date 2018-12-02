@@ -39,7 +39,7 @@ public class ClienteAdicionarActivity extends AppCompatActivity {
         B_Cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1=new Intent(ClienteAdicionarActivity.this,ClienteMenuActivity.class);
+                Intent intent1=new Intent(ClienteAdicionarActivity.this,ClienteListViewActivity.class);
                 startActivity(intent1);
             }
         });
@@ -47,6 +47,8 @@ public class ClienteAdicionarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 registrarCliente();
+                Intent intent1=new Intent(ClienteAdicionarActivity.this,ClienteListViewActivity.class);
+                startActivity(intent1);
             }
         });
     }

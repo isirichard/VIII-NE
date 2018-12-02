@@ -42,7 +42,7 @@ public class CajeroAdicionarActivity extends AppCompatActivity {
         B_Cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1=new Intent(CajeroAdicionarActivity.this,CajeroMenuActivity.class);
+                Intent intent1=new Intent(CajeroAdicionarActivity.this,CajeroListViewActivity.class);
                 startActivity(intent1);
             }
         });

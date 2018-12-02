@@ -32,7 +32,7 @@ public class ClienteBuscarActivity extends AppCompatActivity {
         Cliente_Buscar_Codigo=(EditText)findViewById(R.id.ET_Cliente_Buscar_Codigo);
         Cliente_Buscar_Atras=(Button)findViewById(R.id.B_Cliente_Buscar_Atras);
         Cliente_Buscar_Buscar=(Button)findViewById(R.id.B_Cliente_Buscar_Buscar);
-        Cliente_Buscar_Listar=(Button)findViewById(R.id.B_Cliente_Buscar_Listar);
+
 
         Cliente_Buscar_Nombre=(TextView)findViewById(R.id.TV_Cliente_Buscar_Nombre);
         Cliente_Buscar_ER=(TextView)findViewById(R.id.TV_Cliente_Buscar_ER);
@@ -40,7 +40,7 @@ public class ClienteBuscarActivity extends AppCompatActivity {
         Cliente_Buscar_Atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ClienteBuscarActivity.this,ClienteMenuActivity.class);
+                Intent intent=new Intent(ClienteBuscarActivity.this,ClienteListViewActivity.class);
                 startActivity(intent);
             }
         });
@@ -67,13 +67,7 @@ public class ClienteBuscarActivity extends AppCompatActivity {
                 }
             }
         });
-        Cliente_Buscar_Listar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(ClienteBuscarActivity.this,ClienteListarActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
 
 

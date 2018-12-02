@@ -21,16 +21,38 @@
         android:layout_height="wrap_content"
         android:hint="Codigo Cliente"
         android:id="@+id/ET_Cliente_Buscar_Codigo"/>
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
-        android:id="@+id/TV_Cliente_Buscar_Nombre"/>
-    <TextView
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Nombre: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:id="@+id/TV_Cliente_Buscar_Nombre"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Estado Registro"
-        android:id="@+id/TV_Cliente_Buscar_ER"/>
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Estado Registro: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Estado Registro"
+            android:id="@+id/TV_Cliente_Buscar_ER"/>
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,15 +67,7 @@
             android:layout_height="wrap_content"
             android:text="BUSCAR"
             android:id="@+id/B_Cliente_Buscar_Buscar"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LISTAR"
-            android:id="@+id/B_Cliente_Buscar_Listar"/>
-
 
     </LinearLayout>
-
-
 
 </LinearLayout>

@@ -16,26 +16,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CajeroMenuActivity" />
         <activity android:name=".CajeroAdicionarActivity" />
         <activity android:name=".CajeroBuscarActivity" />
-        <activity android:name=".CajeroModificarActivity" />
-        <activity android:name=".CajeroEliminarActivity" />
         <activity android:name=".ClienteAdicionarActivity" />
         <activity android:name=".ClienteBuscarActivity" />
-        <activity android:name=".ClienteMenuActivity" />
-        <activity android:name=".ClienteModificarActivity" />
-        <activity android:name=".ClienteEliminarActivity" />
-        <activity android:name=".CajeroListarActivity" />
-        <activity android:name=".ClienteListarActivity" />
-        <activity android:name=".ReciboMenuActivity" />
         <activity android:name=".ReciboAdicionarActivity" />
         <activity android:name=".ReciboBuscarActivity" />
-        <activity android:name=".ReciboListarActivity" />
-        <activity android:name=".ReciboDetalleActivity" />
-        <activity android:name=".ReciboModificarActivity" />
-        <activity android:name=".ReciboEliminarActivity" />
-        <activity android:name=".ReciboListViewActivity"></activity>
+        <activity android:name=".ReciboListViewActivity" />
+        <activity android:name=".ReciboModificar2" />
+        <activity android:name=".ReciboEliminar2" />
+        <activity android:name=".ReciboActivar" />
+        <activity android:name=".ReciboInactivar" />
+        <activity android:name=".ClienteListViewActivity" />
+        <activity android:name=".ClienteModificar2" />
+        <activity android:name=".ClienteEliminar2" />
+        <activity android:name=".ClienteActivar" />
+        <activity android:name=".ClienteInactivar" />
+        <activity android:name=".CajeroListViewActivity" />
+        <activity android:name=".CajeroModificar2" />
+        <activity android:name=".CajeroEliminar2" />
+        <activity android:name=".CajeroActivar" />
+        <activity android:name=".CajeroInactivar"></activity>
     </application>
 
 </manifest>

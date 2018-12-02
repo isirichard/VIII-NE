@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReciboListViewActivity"
+    tools:context=".CajeroListViewActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal">
     <LinearLayout
@@ -12,27 +12,18 @@
         android:layout_height="25dp"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="60dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="CODIGO"/>
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="CAJERO"/>
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="CLIENTE"/>
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="MONTO"/>
 
         <TextView
-            android:layout_width="50dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="ER" />
-
+            android:text="ESTADO REGISTRO" />
 
     </LinearLayout>
     <LinearLayout
@@ -42,7 +33,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/LV_Mostrar_Recibo"
+            android:id="@+id/LV_Mostrar_Cajero"
             >
         </ListView>
     </LinearLayout>
@@ -55,22 +46,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ADICIONAR"
-            android:id="@+id/B_LV_RECIBO_ADICIONAR2"/>
+            android:id="@+id/B_LV_CAJERO_ADICIONAR"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MODIFICAR"
-            android:id="@+id/B_LV_RECIBO_MODIFICAR"/>
+            android:id="@+id/B_LV_CAJERO_MODIFICAR"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ELIMINAR"
-            android:id="@+id/B_LV_RECIBO_ELIMINAR"/>
+            android:id="@+id/B_LV_CAJERO_ELIMINAR"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BUSCAR"
-            android:id="@+id/B_LV_RECIBO_BUSCAR"/>
+            android:id="@+id/B_LV_CAJERO_BUSCAR"/>
     </LinearLayout>
 
     <LinearLayout
@@ -81,17 +72,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ATRAS"
-            android:id="@+id/B_LV_RECIBO_ATRAS2"/>
+            android:id="@+id/B_LV_CAJERO_ATRAS"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="ACTIVAR"
-            android:id="@+id/B_LV_RECIBO_ACTIVAR"/>
+            android:id="@+id/B_LV_CAJERO_ACTIVAR"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="INACTIVAR"
-            android:id="@+id/B_LV_RECIBO_INACTIVAR"/>
+            android:id="@+id/B_LV_CAJERO_INACTIVAR"/>
     </LinearLayout>
+
 
 </LinearLayout>
