@@ -31,7 +31,7 @@ public class CajeroBuscarActivity extends AppCompatActivity {
         Cajero_Buscar_Codigo=(EditText)findViewById(R.id.ET_Cajero_Buscar_Codigo);
         Cajero_Buscar_Atras=(Button)findViewById(R.id.B_Cajero_Buscar_Atras);
         Cajero_Buscar_Buscar=(Button)findViewById(R.id.B_Cajero_Buscar_Buscar);
-        Cajero_Buscar_Listar=(Button)findViewById(R.id.B_Cajero_Buscar_Listar);
+
 
 
         Cajero_Buscar_Nombre=(TextView)findViewById(R.id.TV_Cajero_Buscar_Nombre);
@@ -42,7 +42,7 @@ public class CajeroBuscarActivity extends AppCompatActivity {
         Cajero_Buscar_Atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(CajeroBuscarActivity.this,CajeroMenuActivity.class);
+                Intent intent=new Intent(CajeroBuscarActivity.this,CajeroListViewActivity.class);
                 startActivity(intent);
             }
         });
@@ -69,15 +69,6 @@ public class CajeroBuscarActivity extends AppCompatActivity {
                 }
             }
         });
-
-        Cajero_Buscar_Listar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(CajeroBuscarActivity.this,CajeroListarActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
     }
 

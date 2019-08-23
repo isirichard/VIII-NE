@@ -101,12 +101,6 @@
             android:layout_height="wrap_content"
             android:text="ATRAS"
             android:id="@+id/B_Recibo_Buscar_Atras"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LISTAR"
-            android:id="@+id/B_Recibo_Buscar_Listar"/>
-
 
     </LinearLayout>
 

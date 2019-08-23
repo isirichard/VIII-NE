@@ -35,12 +35,12 @@ public class ReciboBuscarActivity extends AppCompatActivity {
 
         Recibo_Buscar_Buscar=(Button)findViewById(R.id.B_Recibo_Buscar_Buscar);
         Recibo_Buscar_Atras=(Button)findViewById(R.id.B_Recibo_Buscar_Atras);
-        Recibo_Buscar_Listar=(Button)findViewById(R.id.B_Recibo_Buscar_Listar);
+
 
         Recibo_Buscar_Atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1=new Intent(ReciboBuscarActivity.this,ReciboMenuActivity.class);
+                Intent intent1=new Intent(ReciboBuscarActivity.this,ReciboListViewActivity.class);
                 startActivity(intent1);
             }
         });
@@ -67,14 +67,5 @@ public class ReciboBuscarActivity extends AppCompatActivity {
                 }
             }
         });
-        Recibo_Buscar_Listar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(ReciboBuscarActivity.this,ReciboListarActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
     }
 }

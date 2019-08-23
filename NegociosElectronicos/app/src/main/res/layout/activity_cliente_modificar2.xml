@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClienteModificarActivity"
+    tools:context=".ClienteModificar2"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="#EEFF41">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,38 +16,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Codigo: "/>
 
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="CODIGO CLIENTE"
-            android:id="@+id/ET_Cliente_Modificar_Codigo"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Buscar"
-            android:id="@+id/B_Cliente_Modificar_Buscar"/>
+            android:hint=""
+            android:id="@+id/ET_Cliente_Modificar2_Codigo"/>
+
     </LinearLayout>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="NOMBRE"
-        android:id="@+id/ET_Cliente_Modificar_Nombre"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Nombre: "/>
+
+        <EditText
+            android:id="@+id/ET_Cliente_Modificar2_Nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="NOMBRE" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Estado Registro: "/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="ER"
-            android:id="@+id/TV_Cliente_Modificar_ER"/>
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/S_Cliente_Modificar_ER"/>
-
+            android:id="@+id/TV_Cliente_Modificar2_ER"/>
     </LinearLayout>
 
     <LinearLayout
@@ -59,15 +68,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ATRAS"
-            android:id="@+id/B_Cliente_Modificar_Atras"/>
+            android:id="@+id/B_Cliente_Modificar2_Atras"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MODIFICAR"
-            android:id="@+id/B_Cliente_Modificar_Modificar"/>
-
-
+            android:id="@+id/B_Cliente_Modificar2_Modificar"/>
     </LinearLayout>
 
 </LinearLayout>
